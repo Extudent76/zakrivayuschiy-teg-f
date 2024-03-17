@@ -198,7 +198,7 @@
   filter: blur(12px);
 }
 
-.card__image_filter-hue-rotate {
+.card__image_filter-hue-rotate-invert {
   filter: hue-rotate(50deg) invert(1);
 }
 
@@ -222,7 +222,6 @@
 .card__icon-button {
   display: flex;
   align-items: center;
-  cursor: pointer;
   block-size: 34px;
   background: none;
   cursor: pointer;
