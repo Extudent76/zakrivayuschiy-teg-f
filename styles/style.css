@@ -15,6 +15,7 @@
 */
 
 .page {
+
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: 'Inter', sans-serif;
@@ -22,6 +23,8 @@
   background-color: var(--bg-color);
   background-image: var(--bg-gradient);
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   margin-block-start: 100px;
   margin-block-end: 100px;
 }
@@ -32,6 +35,9 @@
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
   text-transform: uppercase;
@@ -40,29 +46,28 @@
 }
 
 .header__logo {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   display: block;
   margin-block-end: 20px;
 }
 
 .header__title {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: clamp(0.875rem, 0.2329rem + 2.7692vw, 1.4375rem);
   margin-block-end: 25px;
 }
 
 .header__theme-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  inset-inline-start: 9px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 14px;
   text-align: left;
@@ -110,6 +115,7 @@
   width: 14px;
   height: 14px;
   position: absolute;
+  top: 0px;
   left: -20px;
   animation: arrow 0.5s infinite alternate ease-in-out;
 }
@@ -148,7 +154,7 @@
   inset-block-start: 25px;
   inset-inline-end: 25px;
   color: var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   text-shadow: -1px 0 var(--label-stroke), 0 1px var(--label-stroke),
     1px 0 var(--label-stroke), 0 -1px var(--label-stroke);
@@ -164,35 +170,35 @@
   border-block-end: 2px solid var(--accent-color);
 }
 
-.card__image_filter-one {
+.card__image_filter-opacity {
   filter: opacity(0.95);
 }
 
-.card__image_filter-two {
+.card__image_filter-grayscal {
   filter: grayscale(0.6);
 }
 
-.card__image_filter-three {
+.card__image_filter-saturate {
   filter: saturate(300%);
 }
 
-.card__image_filter-four {
+.card__image_filter-hue-rotate {
   filter: hue-rotate(50deg);
 }
 
-.card__image_filter-five {
+.card__image_filter-invert {
   filter: invert(1);
 }
 
-.card__image_filter-six {
+.card__image_filter-sepia {
   filter: sepia(80%);
 }
 
-.card__image_filter-seven {
+.card__image_filter-blur {
   filter: blur(12px);
 }
 
-.card__image_filter-eight {
+.card__image_filter-hue-rotate {
   filter: hue-rotate(50deg) invert(1);
 }
 
@@ -209,11 +215,14 @@
   display: flex;
   align-items: flex-end;
   justify-content: end;
-  gap: 12px;
+  gap: 6px;
   padding: 0 25px 25px;
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   block-size: 34px;
   background: none;
   cursor: pointer;
@@ -231,6 +240,7 @@
 }
 
 .card__like-button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,16 +248,12 @@
   min-block-size: 38px;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-around;
-}
-
 .button-save {
+  cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -269,7 +275,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   text-wrap: nowrap;
   font-size: 14px;
   line-height: 12.6px;
@@ -279,6 +285,7 @@
 }
 
 .button-state {
+  cursor: pointer;
   position: relative;
 }
 
@@ -341,7 +348,7 @@
 
 .dialog__title {
   color: var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -349,6 +356,7 @@
 }
 
 .dialog__button {
+  cursor: pointer;
   block-size: 38px;
   inline-size: 100%;
   display: flex;
